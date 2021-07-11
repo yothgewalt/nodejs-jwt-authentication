@@ -26,3 +26,22 @@ After you have installed the package You can call http_server to use the API now
 ```
 npm start
 ```
+
+## Routes
+
+If you want to register use this path.
+
+```
+/api/registration
+```
+
+If you want to login use this path
+
+```
+/api/login
+```
+
+## Testing Tools
+
+You can use any program that can test the API, but I recommend using Postman.
+Postman: https://www.postman.com/downloads/
