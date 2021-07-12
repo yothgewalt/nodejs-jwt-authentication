@@ -15,7 +15,7 @@
 
 ## Getting started
 
-Before you start We have to install all necessary packages first. (Because I have removed node_modules for easy download)
+Before you start You have to install all necessary packages first. (Because I have removed node_modules for easy download)
 
 ```
 npm install
