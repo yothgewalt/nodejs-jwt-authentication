@@ -10,12 +10,12 @@ class User {
     }
 
     registration() {
-        return database.execute('INSERT INTO `user_collections` (email, password, createAt, updateAt) VALUES(?, ?, ?, ?)',
+        return database.execute('INSERT INTO `<DB>` (email, password, createAt, updateAt) VALUES(?, ?, ?, ?)',
         [this.email, this.password, this.createAt, this.updateAt]);
     }
 
     static find_user_by_email ({email = ''}) {
-        return database.execute('SELECT * FROM `user_collections` WHERE user_collections.email = ?', [email]);
+        return database.execute('SELECT * FROM `<DB>` WHERE user_collections.email = ?', [email]);
     }
 }
 
