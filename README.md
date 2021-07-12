@@ -27,6 +27,8 @@ After you have installed the package You can call http_server to use the API now
 npm start
 ```
 
+# Remember to set Database and Execute for Database in Model.
+
 ## Routes
 
 If you want to register use this path.
