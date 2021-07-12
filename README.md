@@ -45,7 +45,7 @@ const storage = database.createPool({
 
 module.exports = storage.promise();
 ```
-
+<br>
 model/user_model.js
 ```js
 const database = require('../routes/connect_database');
