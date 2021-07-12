@@ -27,7 +27,49 @@ After you have installed the package You can call http_server to use the API now
 npm start
 ```
 
-* Remember to set Database and Execute for Database in Model. *
+
+* Remember to set Database and Execute for Database in Model
+
+routes/connect_database.js
+```js
+const database = require("mysql2");
+
+const storage = database.createPool({
+    host: '<Your hostname>',
+    user: '<Your username>',
+    database: '<Your database>',
+    password: '<Your password>',
+    port: 3306
+});
+
+module.exports = storage.promise();
+```
+
+model/user_model.js
+```js
+const database = require('../routes/connect_database');
+
+class User {
+    constructor({email = '', password = '', id = 0}) {
+        this.email = email;
+        this.password = password;
+        this.id = id;
+        this.createAt = new Date();
+        this.updateAt = new Date();
+    }
+
+    registration() {
+        return database.execute('INSERT INTO `<Your table>` (email, password, createAt, updateAt) VALUES(?, ?, ?, ?)',
+        [this.email, this.password, this.createAt, this.updateAt]);
+    }
+
+    static find_user_by_email ({email = '<Your table>'}) {
+        return database.execute('SELECT * FROM `user_collections` WHERE user_collections.email = ?', [email]);
+    }
+}
+
+module.exports = User;
+```
 
 ## Routes
 
