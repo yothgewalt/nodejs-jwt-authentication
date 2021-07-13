@@ -29,7 +29,19 @@ npm start
 
 <br>
 
-* Remember to set Database and Execute for Database in Model
+## Remember to set Database and Execute for Database in Model
+Command to create a table for a database to store data. Authentication
+
+```sql
+CREATE TABLE `<Table Name>` (
+  id INT(6) UNSIGNED AUTO_INCREMENT,
+  email VAR(255) NOT NULL,
+  password VAR(255) NOT NULL,
+  createAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  updateAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY(id)
+);
+```
 
 routes/connect_database.js
 ```js
