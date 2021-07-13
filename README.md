@@ -43,7 +43,7 @@ CREATE TABLE `<Table Name>` (
 );
 ```
 
-routes/connect_database.js
+Add details in routes/connect_database.js
 ```js
 const database = require("mysql2");
 
@@ -58,7 +58,7 @@ const storage = database.createPool({
 module.exports = storage.promise();
 ```
 
-model/user_model.js
+Add details in model/user_model.js
 ```js
 const database = require('../routes/connect_database');
 
